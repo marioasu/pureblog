@@ -55,4 +55,4 @@ def post(article):
     return render_template('post.html', posts=posts, curr_post=curr_post)
 
 if __name__ == '__main__':
-    app.run(port=8077)
+    app.run(host='0', port=8077)
