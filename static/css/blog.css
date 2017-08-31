@@ -32,6 +32,8 @@ h3 {
     margin-top: 10px; }
     .post blockquote p:first-of-type {
       margin-top: 0; }
+.post .codehilite pre {
+  margin-top: 5px; }
 
 /*main*/
 .screen {
