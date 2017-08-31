@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %} archives {% endblock %}
+
+{% block left_col %}
+  <div class="left_col">
+    <div class="archive_wall">
+      <div class="avatar">
+        <a href="/"><img src="/static/img/blog_bg/avatar.jpg"></a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mid_col %}
+<div class="mid_col">
+  <div class="container archives_container">
+    {% for year, posts in entries.items() %}
+    <section class="archives"><h1 class="year">{{ year }}</h1>
+      {% for post in posts %}
+      <article>
+        <div class="meta">
+          <span class="date">{{ post.date }}</span>
+          <br>
+          <span class="tags">
+            {% if post.tags %}
+              {% for tag in post.tags %}
+              <a class="category" href="/tags/{{ tag }}">{{ tag }}</a>
+              {% endfor %}
+            {% endif %}
+          </span>
+        </div>
+        <h1 class="title"><a href="{{ post.link }}">{{ post.title }}</a></h1>
+      </article>
+      {% endfor %}
+    </section>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
