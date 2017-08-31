@@ -49,7 +49,7 @@ def page(pageno):
 @app.route('/post/<article>')
 def post(article):
     posts = blog.get_posts()
-    posts = random.sample(posts, 10)
+    # posts = random.sample(posts, 10)
     prev_post, curr_post, next_post = blog.get_post(article)
 
     return render_template('post.html', posts=posts, curr_post=curr_post)
