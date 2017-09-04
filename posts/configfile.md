@@ -57,3 +57,12 @@ Host linode
     "method":"aes-256-cfb"
 }
 ```
+
+### screen - ~/.screenrc
+```
+escape ^Ll # Instead of Control-a, make the escape/command character be Control-l
+autodetach on # Autodetach session on hangup instead of terminating screen completely
+startup_message off # Turn off the splash screen
+defscrollback 30000 # Use a 30000-line scrollback buffer
+termcapinfo xterm ti@:te@
+```
