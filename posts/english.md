@@ -268,3 +268,6 @@ Position: 999
 - at your disposal - 任由使用，听候差遣
 - but rather - 而是，正相反
 - get a grip on - 抓住，掌握
+
+## 编程相关词汇
+- shim - 填片

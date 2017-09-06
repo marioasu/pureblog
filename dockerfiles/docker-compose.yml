@@ -1,0 +1,15 @@
+version: '2'
+services:
+  pureblog:
+    image: mrsu/pureblog
+    restart: always
+    environment:
+      - DOMAIN_NAME=mrsu.me
+      - USER_ID=1001
+      - USER_GID=1001
+      - WEB_HOME=/home/admin/web/pureblog
+      - PROJECT_NAME=mrsu
+    volumes:
+      - '/home/admin/web:/home/admin/web'
+    ports:
+      - '8000:8000'
