@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% block title %} 速查手册 {% endblock %}
+
+{% block left_col %}
+  <div class="left_col">
+    <div class="sidenav">
+      <div class="posts">
+        <h2><a href="/archives">Archives</a></h2>
+        <ul class="article-list">
+          <li><a href="/html/manual?#print_format">printf 格式</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mid_col %}
+<div class="mid_col">
+  <div class="container">
+    <h1>C语言格式输出函数 printf 格式字符</h1>
+    <table>
+      <tr><td colspan="2">类型</td></tr>
+      <tr>
+        <th>格式字符</th>
+        <th>含义</th>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>十进制有符号整数</td>
+      </tr>
+      <tr>
+        <td>u</td>
+        <td>十进制无符号整数</td>
+      </tr>
+      <tr>
+        <td>o</td>
+        <td>八进制无符号整数（不输出前缀o）</td>
+      </tr>
+      <tr>
+        <td>x,X</td>
+        <td>十六进制无符号整数（不输出前缀ox）</td>
+      </tr>
+      <tr>
+        <td>f</td>
+        <td>单、双精度实数的小数形式</td>
+      </tr>
+      <tr>
+        <td>e,E</td>
+        <td>单、双精度实数的指数形式</td>
+      </tr>
+      <tr>
+        <td>g,G</td>
+        <td>%f或%e中的较短形式</td>
+      </tr>
+      <tr>
+        <td>c</td>
+        <td>单个字符</td>
+      </tr>
+      <tr>
+        <td>s</td>
+        <td>字符串</td>
+      </tr>
+      <tr><td colspan="2">长度</td></tr>
+      <tr>
+        <td>h</td>
+        <td>短整型</td>
+      </tr>
+      <tr>
+        <td>l</td>
+        <td>长整型</td>
+      </tr>
+      <tr><td colspan="2">.精度</td></tr>
+    </table>
+  </div>
+</div>
+{% endblock %}

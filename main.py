@@ -12,6 +12,12 @@ blog = Blog()
 @app.route('/')
 def index():
     return page(1)
+
+@app.route('/html/<page>')
+def html(page):
+    print('pages/{}.html'.format(page))
+    return render_template('pages/{}.html'.format(page))
+
 @app.route('/archives')
 def archives():
     posts = blog.get_posts()

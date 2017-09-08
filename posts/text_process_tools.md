@@ -38,7 +38,7 @@ sed [OPTION]... {script-only-if-no-other-script} [input-file]...
 表达式  
 p 打印  
 d 删除  
-s 替换 紧跟s的字符就是查找串和替换串的分隔符  
+s 替换 紧跟s的字符就是查找串和替换串的分隔符，用&来引用匹配到的字符串  
 
 ### cut
 -d :    --delimiter 分隔符  
