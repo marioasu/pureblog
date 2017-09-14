@@ -269,5 +269,20 @@ Position: 999
 - but rather - 而是，正相反
 - get a grip on - 抓住，掌握
 
+## 2017-09-13
+- fundamental - 基础、原理
+- conduct - 实施
+- assessment - 评估
+- regulatory - 监管
+- condone - 容忍、宽恕
+- procurement - 采购
+- antenna - 触须、天线
+- construe - 解释
+
 ## 编程相关词汇
+### 命名
 - shim - 填片
+
+### 术语
+- mutexs (mutual exclusion [locks]) - 互斥量，互斥锁
+- penetration - 渗透
