@@ -1,7 +1,8 @@
 import configparser
 import random
 import time
-from flask import Flask, render_template
+import os
+from flask import Flask, render_template, request, send_from_directory, abort
 from blog import Blog
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ blog = Blog()
 def index():
     return page(1)
 
-@app.route('/html/<page>')
+@app.route('/pages/<page>')
 def html(page):
     print('pages/{}.html'.format(page))
     return render_template('pages/{}.html'.format(page))
@@ -59,6 +60,14 @@ def post(article):
     prev_post, curr_post, next_post = blog.get_post(article)
 
     return render_template('post.html', posts=posts, curr_post=curr_post)
+
+@app.route('/download/book/<title>')
+def download_book(title):
+    if request.method == 'GET':
+        if os.path.isfile(os.path.join('static/books', title)):
+            return send_from_directory('static/books', title, as_attachment=True)
+        else:
+            abort(404)
 
 if __name__ == '__main__':
     app.run(host='0', port=8002)

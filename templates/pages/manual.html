@@ -1,13 +1,38 @@
 {% extends 'layout.html' %}
 {% block title %} 速查手册 {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<style>
+  h2 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 2;
+  }
+  em {
+    color: #e36c6c;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .tab-pane {
+    margin-top: 25px;
+    margin-bottom: 60px;
+  }
+  .left_col .sidenav {
+    background-image: url("../../static/img/blog_bg/left_bg_5.jpg");
+  }
+</style>
+{%endblock%}
 
 {% block left_col %}
   <div class="left_col">
     <div class="sidenav">
       <div class="posts">
-        <h2><a href="/archives">Archives</a></h2>
-        <ul class="article-list">
-          <li><a href="/html/manual?#print_format">printf 格式</a></li>
+        <h2><a href="/">Index</a></h2>
+        <ul class="article-list nav nav-pills nav-stacked">
+          <li class="active"><a href="#print_format" data-toggle="pill">printf 格式</a></li>
+          <li><a href="#signal" data-toggle="pill">signal （软中断）信号</a></li>
         </ul>
       </div>
     </div>
@@ -16,92 +41,290 @@
 
 {% block mid_col %}
 <div class="mid_col">
-  <div class="container">
-    <h1>C语言格式输出函数 printf 格式字符</h1>
-    <table>
-      <tr><td colspan="2">类型</td></tr>
-      <tr>
-        <th>格式字符</th>
-        <th>含义</th>
-      </tr>
-      <tr>
-        <td>d</td>
-        <td>十进制有符号整数</td>
-      </tr>
-      <tr>
-        <td>u</td>
-        <td>十进制无符号整数</td>
-      </tr>
-      <tr>
-        <td>o</td>
-        <td>八进制无符号整数（不输出前缀o）</td>
-      </tr>
-      <tr>
-        <td>x,X</td>
-        <td>十六进制无符号整数（不输出前缀ox）</td>
-      </tr>
-      <tr>
-        <td>f</td>
-        <td>单、双精度实数的小数形式</td>
-      </tr>
-      <tr>
-        <td>e,E</td>
-        <td>单、双精度实数的指数形式</td>
-      </tr>
-      <tr>
-        <td>g,G</td>
-        <td>%f或%e中的较短形式</td>
-      </tr>
-      <tr>
-        <td>c</td>
-        <td>单个字符</td>
-      </tr>
-      <tr>
-        <td>s</td>
-        <td>字符串</td>
-      </tr>
-      <tr><td colspan="2">长度</td></tr>
-      <tr>
-        <td>h</td>
-        <td>短整型</td>
-      </tr>
-      <tr>
-        <td>l</td>
-        <td>长整型</td>
-      </tr>
-      <tr><td colspan="2">.精度</td></tr>
-      <tr>
-        <td>”.“后跟十进制数</td>
-        <td>小数的位数或字符的个数，截取超过部分</td>
-      </tr>
-      <tr><td colspan="2">输出最小宽度</td></tr>
-      <tr>
-        <td>用十进制数表示</td>
-        <td>实际位数若少于定义最小宽度，则补以空格（默认）或0（eg.%010s）</td>
-      </tr>
-      <tr><td colspan="2">标志</td></tr>
-      <tr>
-        <td>-</td>
-        <td>结果左对齐，右边填空格</td>
-      </tr>
-      <tr>
-        <td>+</td>
-        <td>输出符号（正号或负号）</td>
-      </tr>
-      <tr>
-        <td>空格</td>
-        <td>输出值为正时冠以空格，为负时冠以负号</td>
-      </tr>
-      <tr>
-        <td>#</td>
-        <td>
-          对c、s、d、u类无影响；<br>
-          对o类，在输出时加前缀o；<br>
-          对x类，在输出时加前缀0x；<br>
-          对e、g、f类当结果有小数时才给出小数点。
-        </td>
-      </tr>
-    </table>
+  <div class="container tab-content">
+    <div class="tab-pane fade in active" id="print_format">
+      <h1>C语言格式输出函数 printf 格式字符</h1>
+      <table>
+        <tr><td colspan="2">类型</td></tr>
+        <tr>
+          <th>格式字符</th>
+          <th>含义</th>
+        </tr>
+        <tr>
+          <td>d</td>
+          <td>十进制有符号整数</td>
+        </tr>
+        <tr>
+          <td>u</td>
+          <td>十进制无符号整数</td>
+        </tr>
+        <tr>
+          <td>o</td>
+          <td>八进制无符号整数（不输出前缀o）</td>
+        </tr>
+        <tr>
+          <td>x,X</td>
+          <td>十六进制无符号整数（不输出前缀ox）</td>
+        </tr>
+        <tr>
+          <td>f</td>
+          <td>单、双精度实数的小数形式</td>
+        </tr>
+        <tr>
+          <td>e,E</td>
+          <td>单、双精度实数的指数形式</td>
+        </tr>
+        <tr>
+          <td>g,G</td>
+          <td>%f或%e中的较短形式</td>
+        </tr>
+        <tr>
+          <td>c</td>
+          <td>单个字符</td>
+        </tr>
+        <tr>
+          <td>s</td>
+          <td>字符串</td>
+        </tr>
+        <tr><td colspan="2">长度</td></tr>
+        <tr>
+          <td>h</td>
+          <td>短整型</td>
+        </tr>
+        <tr>
+          <td>l</td>
+          <td>长整型</td>
+        </tr>
+        <tr><td colspan="2">.精度</td></tr>
+        <tr>
+          <td>”.“后跟十进制数</td>
+          <td>小数的位数或字符的个数，截取超过部分</td>
+        </tr>
+        <tr><td colspan="2">输出最小宽度</td></tr>
+        <tr>
+          <td>用十进制数表示</td>
+          <td>实际位数若少于定义最小宽度，则补以空格（默认）或0（eg.%010s）</td>
+        </tr>
+        <tr><td colspan="2">标志</td></tr>
+        <tr>
+          <td>-</td>
+          <td>结果左对齐，右边填空格</td>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>输出符号（正号或负号）</td>
+        </tr>
+        <tr>
+          <td>空格</td>
+          <td>输出值为正时冠以空格，为负时冠以负号</td>
+        </tr>
+        <tr>
+          <td>#</td>
+          <td>
+            对c、s、d、u类无影响；<br>
+            对o类，在输出时加前缀o；<br>
+            对x类，在输出时加前缀0x；<br>
+            对e、g、f类当结果有小数时才给出小数点。
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="tab-pane fade" id="signal">
+      <h1>Linux 信号表</h1>
+      <p>内核通过信号机制通知用户进程系统中发生的事件（异常）</p>
+      <p>可以使用 kill 命令向进程发送信号</p>
+      <p>man 7 signal 查看可发送的信号类型</p>
+      <p>stty -a 查看发送信号的键盘设置</p>
+      <table>
+        <tr>
+          <th>序号</th>
+          <th>名称</th>
+          <th>默认行为</th>
+          <th>相应事件</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>SIGHUP</td>
+          <td>终止</td>
+          <td>终端线挂断 <em>可以使用 nohup 命令阻止SIGHUP信号发到这个进程</em></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>SIGINT</td>
+          <td>终止</td>
+          <td>来自键盘的中断 <em>当前进程在前台运行时 键入 ^C 内核发送一个SIGINT信号给这个前台进程组中的每个进程</em></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>SIGQUIT</td>
+          <td>终止</td>
+          <td>来自键盘的退出 <em>类似SIGINT 由^\控制 进程退出时产生core文件</em></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>SIGILL</td>
+          <td>终止</td>
+          <td>非法指令</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>SIGTRAP</td>
+          <td>终止并转储内存</td>
+          <td>跟踪陷阱</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>SIGABRT</td>
+          <td>终止并转储内存</td>
+          <td>来自abort函数的终止信号</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>SIGBUS</td>
+          <td>终止</td>
+          <td>总线错误</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>SIGFPE</td>
+          <td>终止并转储内存</td>
+          <td>浮点异常 <em>除零错误</em></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>SIGKILL</td>
+          <td>终止</td>
+          <td>杀死程序 <em>SIGKILL不能被捕获或忽略</em></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>SIGUSR1</td>
+          <td>终止</td>
+          <td>用户自定义信号1</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>SIGSEGV</td>
+          <td>终止并转储内存</td>
+          <td>无效的内存引用（段故障）</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>SIGUSR2</td>
+          <td>终止</td>
+          <td>用户自定义信号2</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>SIGPIPE</td>
+          <td>终止</td>
+          <td>向一个没有读用户的管道做写操作</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>SIGALRM</td>
+          <td>终止</td>
+          <td>来自alarm函数的定时器信号</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>SIGTERM</td>
+          <td>终止</td>
+          <td>软件终止信号 <em>kill 的默认信号</em></td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>SIGSTKFLT</td>
+          <td>终止</td>
+          <td>协处理器上的栈故障</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>SIGCHLD</td>
+          <td>忽略</td>
+          <td>一个子进程停止或者终止</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>SIGCONT</td>
+          <td>忽略</td>
+          <td>继续进程（如果该进程停止）</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>SIGSTOP</td>
+          <td>停止直到下一个SIGCONT</td>
+          <td>不是来自终端的停止信号</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>SIGTSTP</td>
+          <td>停止直到下一个SIGCONT</td>
+          <td>来自终端的停止信号<em>^Z</em></td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>SIGTTIN</td>
+          <td>停止直到下一个SIGCONT</td>
+          <td>后台进程从终端读</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>SIGTTOU</td>
+          <td>停止直到下一个SIGCONT</td>
+          <td>后台进程向终端写</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>SIGURG</td>
+          <td>忽略</td>
+          <td>套接字上的紧急情况</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>SIGXCPU</td>
+          <td>终止</td>
+          <td>CPU时间限制超出</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>SIGXFSZ</td>
+          <td>终止</td>
+          <td>文件大小超出限制</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>SIGVTALRM</td>
+          <td>终止</td>
+          <td>虚拟定时器期满</td>
+        </tr>
+        <tr>
+          <td>27</td>
+          <td>SIGPROF</td>
+          <td>终止</td>
+          <td>剖析定时器期满</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>SIGWINCH</td>
+          <td>忽略</td>
+          <td>窗口大小变化</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>SIGIO</td>
+          <td>终止</td>
+          <td>在某个描述符上可执行I/O操作</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>SIGPWR</td>
+          <td>终止</td>
+          <td>电源故障</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </div>
 {% endblock %}

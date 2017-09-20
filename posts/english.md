@@ -279,10 +279,17 @@ Position: 999
 - antenna - 触须、天线
 - construe - 解释
 
+## 2017-09-14
+- alliance - 联盟
+
 ## 编程相关词汇
 ### 命名
 - shim - 填片
+- handler - 处理程序
 
 ### 术语
 - mutexs (mutual exclusion [locks]) - 互斥量，互斥锁
 - penetration - 渗透
+
+## 汉字
+- 塜 - péng 同塳 尘土

@@ -55,7 +55,7 @@ ssh-keygen -t rsa -C "from mrsu's linode"
 ### 修改sshd端口
 有了前车之鉴，不能使用sshd的默认端口了（其实也有```fail2ban```的解决方案，未尝试）。况且从```/var/log/auth.log```发现了大量类似```Aug  3 02:07:14 localhost sshd[12680]: Failed password for root from 221.194.47.233 port 51624 ssh2```的记录，于是决定不再使用22端口  
 顺便限制只能ipv4登录  
-修改```/etc/ssh/sshd_config```
+修改```/etc/ssh/sshd_config``` 后执行 ```sudo /etc/init.d/ssh restart```
 ```
 Port 2333
 AddressFamily inet
