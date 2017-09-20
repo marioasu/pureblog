@@ -7,16 +7,3 @@
 {% block mid_col %}
     {% include 'posts_list.html' %}
 {% endblock %}
-
-{% block script %}
-<script type="text/javascript">
-    $('.avatar img').rotate({bind: {
-        click: function(){
-            $(this).rotate({
-                angle: 0,
-                animateTo: 360
-            });
-        }
-    }});
-</script>
-{% endblock %}

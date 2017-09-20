@@ -1,7 +1,25 @@
 <div class="left_col">
   <div class="left_wall">
-    <div class="avatar">
-        <img src="/static/img/blog_bg/avatar.jpg">    
+    <div class="nav">
+      <div class="container">
+        <a href="/" class="to top"><i class="fa fa-home"></i></a>
+        <a href="#" class="to left"><i class="fa fa-file-pdf-o"></i></a>
+        <a href="/pages/manual" class="to right"><i class="fa fa-search"></i></a>
+        <a href="/archives" class="to bottom"><i class="fa fa-book"></i></a>
+        <a href="#" class="rotate"><img src="/static/img/blog_bg/avatar.jpg"></a>
+      </div>
     </div>
   </div>
 </div>
+{% block script %}
+<script type="text/javascript">
+    $('.rotate img').rotate({bind: {
+        click: function(){
+            $(this).rotate({
+                angle: 0,
+                animateTo: 360
+            });
+        }
+    }});
+</script>
+{% endblock %}

@@ -51,22 +51,68 @@ h3 {
     width: 30%;
     height: 100%;
     text-align: center;
-    .avatar {
+    .nav {
+        font: 16px/1.5em Tahoma, sans-serif;
         padding-top: 30%;
-        img {
-            width: 128px;
-            height: 128px;
-            border-radius: 100%;
+        .container {
+            position: relative;
+            width: 5em;
+            height: 5em;
+            padding: 6em;
+            line-height: 5em;
+            text-align: center;
+            margin: 0 auto;
+            border: 0.08333333em solid #2eb8b3;
+            border-radius: 50%;
+            background-color: rgba(46, 184, 179, 0.37);
+            z-index: 1;
+        }
+        .container a.to {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2em;
+            height: 2em;
+            border-radius: 1em;
+            font-size: 1.66666667em;
+            -webkit-transform: translate(-1em, -1em);
+            -webkit-transition: all 0.5s ease;
+            background-color: #0e0e0e;
+        }
+        .container a i {
+            vertical-align: super;
+        }
+        .container a.rotate {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6em;
+            height: 6em;
+            border-radius: 3em;
+            -webkit-transform: translate(-3em, -3em);
+        }
+        .container a.rotate img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        .container:hover a.to.top {
+            -webkit-transform: translate(-1em, -5em);
+        }
+        .container:hover a.to.left {
+            -webkit-transform: translate(-5em, -1em);
+        }
+        .container:hover a.to.right {
+            -webkit-transform: translate(3em, -1em);
+        }
+        .container:hover a.to.bottom {
+            -webkit-transform: translate(-1em, 3em);
         }
     }
     .left_wall {
         height: 100%;
         background-image: url('../img/blog_bg/left_bg_0.jpg');
-        background-position: 50% 50%;
-    }
-    .archive_wall {
-        height: 100%;
-        background-image: url('../img/blog_bg/left_bg_1.jpg');
         background-position: 50% 50%;
     }
     .sidenav {
@@ -202,7 +248,7 @@ h3 {
         margin: 15px 0;
     }
     .codehilite pre {
-        padding: 0.5em;
+        padding: 0.7em;
     }
 }
 .sidenav {
