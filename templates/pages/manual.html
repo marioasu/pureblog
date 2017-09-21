@@ -31,8 +31,10 @@
       <div class="posts">
         <h2><a href="/">Index</a></h2>
         <ul class="article-list nav nav-pills nav-stacked">
-          <li class="active"><a href="#print_format" data-toggle="pill">printf 格式</a></li>
-          <li><a href="#signal" data-toggle="pill">signal （软中断）信号</a></li>
+          <li class="active"><a href="#print_format" data-toggle="pill">printf格式</a></li>
+          <li><a href="#signal" data-toggle="pill">signal（软中断）信号</a></li>
+          <li><a href="#mime" data-toggle="pill">MIME类型</a></li>
+          <li><a href="#http" data-toggle="pill">HTTP状态码</a></li>
         </ul>
       </div>
     </div>
@@ -322,6 +324,105 @@
           <td>SIGPWR</td>
           <td>终止</td>
           <td>电源故障</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="mime">
+      <h1>MIME类型</h1>
+      <p>Multipurpose Internet Mail Extensions, 多用途网际邮件扩充协议</p>
+      <p>HTTP中 由 Content-Type 头指定</p>
+      <p>text - 普通文件，理论上是可读的语言 默认subtype是plain</p>
+      <p>image - 图像</p>
+      <p>audio - 音频文件</p>
+      <p>video - 视频文件</p>
+      <p>application - 二进制数据 默认subtype是octet-stream</p>
+      <p>multipart/form-data - 用于POST请求传输数据 HTML表单中设置enctype为multipart/form-data编码来上传文件</p>
+      <p>multipart/byteranges - 用于把部分响应报文发送回浏览器</p>
+      <table>
+        <tr>
+          <th>MIME类型</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>text/html</td>
+          <td>HTML页面</td>
+        </tr>
+        <tr>
+          <td>text/plain</td>
+          <td>无格式文本</td>
+        </tr>
+        <tr>
+          <td>application/octet-stream</td>
+          <td>字节流文件 <em>nginx的默认mime-type，浏览器的默认处理方式是下载</em></td>
+        </tr>
+        <tr>
+          <td>application/pdf</td>
+          <td>pdf文档</td>
+        </tr>
+        <tr>
+          <td>image/gif</td>
+          <td>GIF格式编码的二进制图像</td>
+        </tr>
+        <tr>
+          <td>image/png</td>
+          <td>PNG格式编码的二进制图像</td>
+        </tr>
+        <tr>
+          <td>image/jpeg</td>
+          <td>JPEG格式编码的二进制图像</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="http">
+      <h1>HTTP状态码</h1>
+      <p>HyperText Transfer Protocol, 超文本传输协议</p>
+      <p>1xx - 消息</p>
+      <p>2xx - 成功</p>
+      <p>3xx - 重定向</p>
+      <p>4xx - 客户端错误</p>
+      <p>5xx - 服务器错误</p>
+      <table>
+        <tr>
+          <th>200</th>
+          <th>成功</th>
+          <th>处理请求无误</th>
+        </tr>
+        <tr>
+          <td>301</td>
+          <td>永久移动</td>
+          <td>内容已经移动到Location头中指明的主机上</td>
+        </tr>
+        <tr>
+          <td>302</td>
+          <td>Found 临时重定向（Moved Temporarily）</td>
+          <td>新的临时URI应当在响应的Location域中返回 <em>大多数浏览器用处理303响应的方式处理302响应。 303 See Other 明确要求浏览器自动重定向</em></td>
+        </tr>
+        <tr>
+          <td>400</td>
+          <td>错误请求</td>
+          <td>服务器不能理解请求</td>
+        </tr>
+        <tr>
+          <td>403</td>
+          <td>禁止</td>
+          <td>服务器无权访问所请求的文件</td>
+        </tr>
+        <tr>
+          <td>404</td>
+          <td>未发现</td>
+          <td>服务器不能找到所请求的文件</td>
+        </tr>
+        <tr>
+          <td>501</td>
+          <td>未实现</td>
+          <td>服务器不支持请求的方法</td>
+        </tr>
+        <tr>
+          <td>505</td>
+          <td>HTTP版本不支持</td>
+          <td>服务器不支持请求的版本</td>
         </tr>
       </table>
     </div>

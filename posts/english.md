@@ -282,6 +282,9 @@ Position: 999
 ## 2017-09-14
 - alliance - 联盟
 
+## 2017-09-21
+- O.G - Original Gangster - 真正的大佬、纯正的匪帮、老炮儿
+
 ## 编程相关词汇
 ### 命名
 - shim - 填片
