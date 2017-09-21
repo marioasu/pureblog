@@ -5,6 +5,9 @@ body {
   background: #eee;
   color: #666; }
 
+pre {
+  padding: 6px 10px; }
+
 a {
   text-decoration: none;
   color: #1593c9; }
