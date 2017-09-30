@@ -8,9 +8,9 @@
 {% block mid_col %}
 <div class="mid_col">
   <div class="container archives_container">
-    {% for year, posts in entries.items() %}
-    <section class="archives"><h1 class="year">{{ year }}</h1>
-      {% for post in posts %}
+    {% for posts in entries %}
+    <section class="archives"><h1 class="year">{{ posts[0] }}</h1>
+      {% for post in posts[1] %}
       <article>
         <div class="meta">
           <span class="date">{{ post.date }}</span>

@@ -29,6 +29,7 @@ def archives():
             entries[year] = []
         entries[year].append(post)
 
+    entries = sorted(entries.items(), key=lambda item:item[0], reverse=True)
     return render_template('archives.html', entries=entries)
 
 @app.route('/page/<pageno>')
