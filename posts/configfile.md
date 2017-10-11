@@ -58,6 +58,32 @@ Host linode
 }
 ```
 
+### polipo - /etc/polipo/config
+```
+logSyslog=true
+logFile=/var/log/polipo/polipo.log
+
+proxyAddress="0.0.0.0"
+
+socksParentProxy="127.0.0.1:1080"
+socksProxyType=socks5
+proxyPort=8123
+
+chunkHighMark=50331648
+objectHighMark=16384
+
+serverMaxSlots=64
+serverSlots=16
+serverSlots1=32
+```
+然后将
+```
+export http_proxy="http://127.0.0.1:8123"
+export https_proxy="https://127.0.0.1:8123"
+```
+写入 ～/.bashrc 或在终端执行
+```curl ip.gs```查看当前IP信息
+
 ### screen - ~/.screenrc
 ```
 escape ^Ll # Instead of Control-a, make the escape/command character be Control-l

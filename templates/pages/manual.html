@@ -35,6 +35,7 @@
           <li><a href="#signal" data-toggle="pill">signal（软中断）信号</a></li>
           <li><a href="#mime" data-toggle="pill">MIME类型</a></li>
           <li><a href="#http" data-toggle="pill">HTTP状态码</a></li>
+          <li><a href="#shell_var" data-toggle="pill">Shell特殊变量</a></li>
         </ul>
       </div>
     </div>
@@ -135,7 +136,8 @@
     <div class="tab-pane fade" id="signal">
       <h1>Linux 信号表</h1>
       <p>内核通过信号机制通知用户进程系统中发生的事件（异常）</p>
-      <p>可以使用 kill 命令向进程发送信号</p>
+      <p>可以使用 ```kill  -SIG pid``` 命令向进程发送信号</p>
+      <p>可以使用```kill -0 pid```命令检查进程是否存在</p>
       <p>man 7 signal 查看可发送的信号类型</p>
       <p>stty -a 查看发送信号的键盘设置</p>
       <table>
@@ -425,9 +427,52 @@
           <td>服务器不支持请求的方法</td>
         </tr>
         <tr>
+          <td>502</td>
+          <td>Bad Gateway</td>
+          <td>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</td>
+        </tr>
+        <tr>
           <td>505</td>
           <td>HTTP版本不支持</td>
           <td>服务器不支持请求的版本</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="shell_var">
+      <h1>Shell特殊变量</h1>
+      <table>
+        <tr>
+          <th>变量</th>
+          <th>含义</th>
+        </tr>
+        <tr>
+          <td>$0</td>
+          <td>当前脚本的文件名</td>
+        </tr>
+        <tr>
+          <td>$n</td>
+          <td>传递给脚本或函数的第n个参数</td>
+        </tr>
+        <tr>
+          <td>$#</td>
+          <td>传递给脚本或函数的参数个数</td>
+        </tr>
+        <tr>
+          <td>$*</td>
+          <td>传递给脚本或函数的所有参数，"$*"（加引号后）会将所有参数视为一个整体</td>
+        </tr>
+        <tr>
+          <td>$@</td>
+          <td>传递给脚本或函数的所有参数，"$@"（加引号后）所有参数仍然可被分别遍历</td>
+        </tr>
+        <tr>
+          <td>$?</td>
+          <td>上个命令的退出状态，或函数的返回值</td>
+        </tr>
+        <tr>
+          <td>$$</td>
+          <td>当前Shell进程ID</td>
         </tr>
       </table>
     </div>
