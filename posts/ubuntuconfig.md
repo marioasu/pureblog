@@ -15,6 +15,11 @@ Position: 983
 useradd -g sudo -d /home/admin -m -s /bin/bash admin
 passwd admin
 ```
+可以配置公钥登录
+```
+ssh-keygen
+ssh-copy-id admin@host
+```
 
 ### 修改主机名
 将主机名改为linode，方便自己在终端中识别。在```/etc/hosts```文件中把主机名指向本地回环地址，不然在执行sudo的时候会提示```sudo: unable to resolve host linode```（我也不知道为啥）

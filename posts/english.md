@@ -289,6 +289,7 @@ Position: 999
 ### 命名
 - shim - 填片
 - handler - 处理程序
+- phrase - 简短描述 #http statusCode 和 reasonPhrase
 
 ### 术语
 - mutexs (mutual exclusion [locks]) - 互斥量，互斥锁

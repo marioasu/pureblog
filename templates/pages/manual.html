@@ -31,7 +31,8 @@
       <div class="posts">
         <h2><a href="/">Index</a></h2>
         <ul class="article-list nav nav-pills nav-stacked">
-          <li class="active"><a href="#print_format" data-toggle="pill">printf格式</a></li>
+          <li class="active"><a href="#print_format" data-toggle="pill">C printf格式</a></li>
+          <li><a href="#fopen" data-toggle="pill">C fopen函数 mode参数</a></li>
           <li><a href="#signal" data-toggle="pill">signal（软中断）信号</a></li>
           <li><a href="#mime" data-toggle="pill">MIME类型</a></li>
           <li><a href="#http" data-toggle="pill">HTTP状态码</a></li>
@@ -130,6 +131,43 @@
             对x类，在输出时加前缀0x；<br>
             对e、g、f类当结果有小数时才给出小数点。
           </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="fopen">
+      <h1>C语言 fopen函数 mode参数</h1>
+      <p>函数原型： FILE *fopen(const char *path, const char *mode);</p>
+      <p>mode 字符串参数由 rwab+ 5个字符组合而成</p>
+      <p>b表示二进制模式，不写b表示文本模式，在UNIX系统上这两种模式没有区别（换行符问题）</p>
+      <table>
+        <tr>
+          <th>mode</th>
+          <th>描述</th>
+        </tr>
+        <tr>
+          <td>r</td>
+          <td>只读，文件必须已存在</td>
+        </tr>
+        <tr>
+          <td>w</td>
+          <td>只写，截断（覆盖），不存在则创建</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>只追加，不存在则创建</td>
+        </tr>
+        <tr>
+          <td>r+</td>
+          <td>允许读写，文件必须已存在</td>
+        </tr>
+        <tr>
+          <td>w+</td>
+          <td>允许读写，截断，不存在则创建</td>
+        </tr>
+        <tr>
+          <td>a+</td>
+          <td>允许读和追加，不存在则创建</td>
         </tr>
       </table>
     </div>
