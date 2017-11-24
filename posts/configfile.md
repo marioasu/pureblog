@@ -92,3 +92,21 @@ startup_message off # Turn off the splash screen
 defscrollback 30000 # Use a 30000-line scrollback buffer
 termcapinfo xterm ti@:te@
 ```
+
+### logrotate /etc/logrotate.d/php5-fpm
+```
+/home/admin/php/var/log/*.log {
+    daily
+    rotate 30
+    missingok
+    notifempty
+    dateext
+    compress
+    delaycompress
+    create 0640 admin admin
+    sharedscripts
+    postrotate
+        [ -r /home/admin/php/var/run/php-fpm.pid ] && kill -USR1 `cat /home/admin/php/var/run/php-fpm.pid`
+    endscript
+}
+```

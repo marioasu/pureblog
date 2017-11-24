@@ -12,8 +12,10 @@ Position: 983
 ### 创建用户
 创建admin用户，密码和rebuild时填写的root密码都用```pwgen```生成，加入sudo组
 ```
-useradd -g sudo -d /home/admin -m -s /bin/bash admin
+groupadd admin
+useradd -g admin -d /home/admin -m -s /bin/bash admin
 passwd admin
+usermod -aG sudo admin
 ```
 可以配置公钥登录
 ```
