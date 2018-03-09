@@ -19,7 +19,7 @@ set autoindent
 ```
 Host *
 ControlMaster auto
-ControlPath ~/.ssh/cm_socket/%r@%h:%p
+ControlPath ~/.ssh/master-%r@%h:%p
 ServerAliveInterval 10
 
 Host linode

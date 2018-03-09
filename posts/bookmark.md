@@ -18,7 +18,7 @@ Position: 997
 
 ### 手册
 - [php](http://php.net/)
-- [jquery](http://www.php100.com/manual/jquery/)
+- [jquery](http://hemin.cn/jq/)
 
 ### 工具
 - [打字练习](https://www.typingclub.com/)
