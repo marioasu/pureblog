@@ -1,7 +1,7 @@
 Date: 2018-05-17
 Title: linux常规操作 - 打包、压缩
 intro: 打包、压缩工具常用命令笔记
-Tags: tar gzip
+Tags: tar gzip 常规操作
 Status: public
 Toc: yes
 Position: 979

@@ -1,9 +1,13 @@
+import sys
 import configparser
 import random
 import time
 import os
 from flask import Flask, render_template, request, send_from_directory, abort
 from blog import Blog
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 config = configparser.ConfigParser()
