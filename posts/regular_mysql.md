@@ -40,9 +40,9 @@ flush privileges;
 ```
 
 ## 简写符号
-ego (\G) 纵向展示数据
-edit (\e) 使用编辑器编辑命令
-system (\!) {shell command} 执行shell指令
+ego (\G) 纵向展示数据  
+edit (\e) 使用编辑器编辑命令  
+system (\!) {shell command} 执行shell指令  
 \c 清除本次输入字符
 
 ## 常规命令
